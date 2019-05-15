@@ -28,7 +28,7 @@ fi
 REGISTRY_VERSION=2.2
 
 # Download registry image v2.2
-docker pull registry:${REGISTRY_VERSION}
+docker pull registry:${REGISTRY_VERSION} --registry-mirror=https://docker.mirrors.ustc.edu.cn
 
 # Start registry container
 mkdir /opt/registry
