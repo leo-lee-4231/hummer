@@ -28,9 +28,9 @@ fi
 REGISTRY_VERSION=2.2
 
 # Download registry image v2.2
-docker pull registry:${REGISTRY_VERSION} --registry-mirror=https://docker.mirrors.ustc.edu.cn
+docker pull registry:${REGISTRY_VERSION}
 
 # Start registry container
 mkdir /opt/registry
-docker run -d -p 5000:5000 --restart=always -v /opt/registry:/var/lib/registry --name hummer_registry registry:${REGISTRY_VERSION}
+docker run -d -p 5000:5000 --restart=always --registry-mirror=https://docker.mirrors.ustc.edu.cn -v /opt/registry:/var/lib/registry --name hummer_registry registry:${REGISTRY_VERSION}
 
